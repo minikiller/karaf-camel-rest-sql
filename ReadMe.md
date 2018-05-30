@@ -66,3 +66,18 @@ The example provides API documentation of the service using Swagger using the _c
 
 You can find more details about running this [quickstart](http://fabric8.io/guide/quickstarts/running.html) on the website. This also includes instructions how to change the Docker image user and registry.
 
+### add feature repo
+```
+$ feature:repo-add mvn:io.fabric8/fabric8-karaf-features/3.0.11/xml/features
+$ feature:repo-add camel 2.21.1
+```
+### install feature
+```
+$ feature:install transaction jndi jdbc pax-jdbc-config pax-jdbc-pool-dbcp2
+$ feature:install camel-blueprint camel-servlet camel-sql camel-jackson camel-swagger-java
+$ feature:install fabric8-karaf-blueprint fabric8-karaf-checks
+$ install -s mvn:org.postgresql/postgresql/9.4-1202-jdbc41
+```
+
+### deploy jar to deploy folder
+
